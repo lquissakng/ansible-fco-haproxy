@@ -10,4 +10,4 @@ install:
 
 script:
   - ansible-playbook test.yml -i inventory --syntax-check
-  - ansible-galaxy install lquissakng.commons
+  - ansible-galaxy install ansible-fco-haproxy
