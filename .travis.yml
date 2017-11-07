@@ -10,6 +10,4 @@ install:
 
 script:
   - ansible-playbook test.yml -i inventory --syntax-check
-
-after_success:
-  - codecov
+  - ansible-galaxy install lquissakng.commons
