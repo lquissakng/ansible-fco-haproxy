@@ -1,7 +1,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-  - role: ansible-role-example
+  - role: ansible-fco-haproxy
     hostname: warudo
     domain: hollowbastion.com
     timezone: America/Sao_Paulo
