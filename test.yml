@@ -1,3 +1,6 @@
+tasks:
+- include_tasks: tasks/main.yml
+
 - hosts: localhost
   remote_user: root
   roles:
@@ -5,8 +8,3 @@
     hostname: warudo
     domain: hollowbastion.com
     timezone: America/Sao_Paulo
-    
-      
-tasks:
-- include_tasks: tasks/main.yml
-
