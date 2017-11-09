@@ -7,11 +7,11 @@ env:
   - distro: ubuntu1404
 
 install:
-  - pip install ansible
   - printf '[defaults]\nroles_path=../' >ansible.cfg
   
 script:
   - ansible-playbook test.yml -i inventory --syntax-check
+  - ansible-playbook tasks/main.yml -i inventory --syntax-check
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
