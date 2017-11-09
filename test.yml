@@ -2,3 +2,4 @@
   remote_user: root
   roles:
   - role: ansible-fco-haproxy
+    hostname: warudo
