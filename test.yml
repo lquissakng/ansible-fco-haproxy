@@ -1,6 +1,12 @@
 ---
 - hosts: localhost
   remote_user: root
+  
+  tasks:
+  - name: Java | Check if is present
+    command: test -x /usr/bin/java
+    ignore_errors: yes
+    
   roles:
   - role: ansible-fco-haproxy
     hostname: localhost
