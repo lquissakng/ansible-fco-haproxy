@@ -5,3 +5,8 @@
     hostname: warudo
     domain: hollowbastion.com
     timezone: America/Sao_Paulo
+    
+      
+tasks:
+- include_tasks: tasks/main.yml
+
