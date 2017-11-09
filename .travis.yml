@@ -1,10 +1,10 @@
-- include: tasks/main.yml
 sudo: false
 
 language: python
 
 python:
   - 2.7
+ 
 env:
   - distro: ubuntu1604
   - distro: ubuntu1404
