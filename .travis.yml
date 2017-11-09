@@ -1,3 +1,4 @@
+- include: tasks/main.yml
 sudo: false
 
 language: python
