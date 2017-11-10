@@ -1,12 +1,27 @@
 ---
-# This role installs HAProxy and configures it.
+- name: Ensure HAProxy is installed (Ubuntu).
+  apt: name=haproxy state=installed
+  when: ansible_os_family == 'Ubuntu'
 
-- name: Download and install haproxy
-  apt-get: name=haproxy state=present
+- name: Ensure HAProxy is enabled (so init script will start it on Ubuntu).
+  lineinfile:
+    dest: /etc/default/haproxy
+    regexp: "^ENABLED.+$"
+    line: "ENABLED=1"
+    state: present
+  when: ansible_os_family == 'Ubuntu'
 
-- name: Configure the haproxy cnf file with hosts
-  template: src=haproxy.cfg.j2 dest=/etc/haproxy/haproxy.cfg
+- name: Set HAProxy version.
+  set_fact:
+    haproxy_version: "{{ '1.5' if '1.5.' in haproxy_version_result.stdout else '1.4' }}"
+
+- name: Copy HAProxy configuration in place.
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    mode: 0644
+    validate: haproxy -f %s -c -q
   notify: restart haproxy
 
-- name: Start the haproxy service
+- name: Ensure HAProxy is started and enabled on boot.
   service: name=haproxy state=started enabled=yes
