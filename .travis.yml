@@ -12,7 +12,6 @@ install:
   
 script:
   - ansible-playbook test.yml -i inventory --syntax-check
-  - ansible-playbook tasks/main.yml -i inventory --syntax-check
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
