@@ -1,3 +1,5 @@
 - hosts: haproxy-server
+  remote_user: ubuntu
+  become: yes
   roles:
     - role: ansible-fco-haproxy
