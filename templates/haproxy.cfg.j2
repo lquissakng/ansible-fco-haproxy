@@ -32,4 +32,4 @@ defaults
 backend app
     listen {{ daemonname }} 0.0.0.0:{{ listenport }}
     balance {{ balance }}
-    server web1 0.0.0.0:{{ httpd_port }}
+    server web1 0.0.0.0:80
