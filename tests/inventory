@@ -1,1 +1,2 @@
-localhost
+[haproxy-server]
+server1
