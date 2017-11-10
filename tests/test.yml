@@ -4,4 +4,3 @@
   roles:
     - role: ansible-fco-haproxy
       hostname: localhost
----
