@@ -1,5 +1,3 @@
-- hosts: localhost
-  remote_user: root  
+- hosts: server1
   roles:
     - role: ansible-fco-haproxy
-      hostname: localhost
